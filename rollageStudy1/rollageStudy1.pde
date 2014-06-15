@@ -1,4 +1,3 @@
-
 PImage sourceOne;
 PImage sourceTwo;
 PImage dest;
@@ -27,7 +26,7 @@ void draw() {
     for (int counter = 0; counter < numOfSlices; counter = counter+1) {
       
       int x1 = (int) map(counter, 0, numOfSlices, 0, sourceOne.width);
-      int x2 = (int) map(counter +1, 0, numOfSlices, 0, sourceOne.width);
+      int x2 = (int) map(counter + 1, 0, numOfSlices, 0, sourceOne.width);
       
       // use horizontal mouse movement to trigger effect, 
       // keep mouse on screen by dividing image in half and subtracting that from mouse value
