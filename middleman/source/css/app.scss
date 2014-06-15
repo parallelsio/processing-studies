@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+// copied temporarily, bower not behaving with middleman
+@import url("libs/normalize/normalize.css");
+@import url("libs/semantic-ui/semantic.css");
+
+
+// for application 
+@import "header";
+
+
+body { background:#DFDFDF; font-family: 'HelveticaLight'; margin:0; padding:0; }
+
+
+@font-face {
+    font-family: 'HelveticaLTStdRoman';
+    src: url('../typefaces/helvetica/helvetica.eot');
+    src: url('../typefaces/helvetica/helvetica.eot') format('embedded-opentype'),
+         url('../typefaces/helvetica/helvetica.woff') format('woff'),
+         url('../typefaces/helvetica/helvetica.ttf') format('truetype'),
+         url('../typefaces/helvetica/helvetica.svg#HelveticaLTStdRoman') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaLight';
+    src: url('../typefaces/helveticalight/helveticalight.eot');
+    src: url('../typefaces/helveticalight/helveticalight.eot') format('embedded-opentype'),
+         url('../typefaces/helveticalight/helveticalight.woff') format('woff'),
+         url('../typefaces/helveticalight/helveticalight.ttf') format('truetype'),
+         url('../typefaces/helveticalight/helveticalight.svg#HelveticaLight') format('svg');
+}
+
+
+// semantic ui override
+input,
+button
+ {  border-radius: 0 !important;  }
+
+
+.ui.button {
+    font-family: 'HelveticaLTStdRoman';
+    letter-spacing: -1px;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-radius: 0;
+}
+
+
+
+a { 
+    color: #32A7E0;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 2px 1px 0px 0px;
+    border-bottom: none;
+    margin: 0 5px;
+  } 
+
+
+a:hover { 
+    padding: 2px 1px 0px 0px;
+    border-bottom: 1px solid #a1a1c7;
+}
+
+
+
