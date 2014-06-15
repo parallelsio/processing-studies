@@ -1,57 +1,53 @@
 
-PImage sourceA;
-PImage sourceB;
+PImage sourceOne;
+PImage sourceTwo;
 PImage dest;
 
-int barSize = 40;
+int sliceWidth = 40;
+int canvasHeight = 800;
+int canvasWidth = 1000;
 
-int canvasHeight = 1599;
-int canvasWidth = 1695;
-
-
-int n = 1000 / barSize;
-      
-    
+int numOfSlices = canvasWidth / sliceWidth;
     
 void setup() {
   
-
+    sourceOne = loadImage("mine_williamsburg_lampost_highway_dusk_dawn_sky_meloncholy_IMG_5077-cropped.jpg");
+    sourceOne.resize(canvasWidth, canvasHeight);
+    
     size(canvasWidth, canvasHeight);
     
-    sourceA = loadImage("mine_williamsburg_lampost_highway_dusk_dawn_sky_meloncholy_IMG_5077-cropped.jpg");
-    sourceA.resize(1000, 800);
-        
-    dest = createImage(1000, 800, RGB);  
+    dest = createImage(sourceOne.width, sourceOne.height, RGB);  
     
-    println ("h: " + sourceA.height + " \t| w: " + sourceA.width );
-    
-    
+    println ("h: " + sourceOne.height + " \t| w: " + sourceOne.width );
   }
  
   
 void draw() {
     
-    
-    for (int i = 0; i < n; i = i+1) {
+    for (int counter = 0; counter < numOfSlices; counter = counter+1) {
       
-      int x1 = (int) map(i, 0, n, 0, sourceA.width);
-      int x2 = (int) map(i+1, 0, n, 0, sourceA.width);
+      int x1 = (int) map(counter, 0, numOfSlices, 0, sourceOne.width);
+      int x2 = (int) map(counter +1, 0, numOfSlices, 0, sourceOne.width);
       
-      // int xOffset = x1 + (int) (x1 * .9);
-      int xOffset = (int) (x1 * .3 + mouseX + -400);
+      // use horizontal mouse movement to trigger effect, 
+      // keep mouse on screen by dividing image in half and subtracting that from mouse value
+
+      int xOffset = (int) (x1 * .3 + (mouseX - (sourceOne.width / 2)));
       
-      // int xOffset = x1;
-      
-      println ("i: " + i + " \t x1: " + x1 + " \t xOffset: " + xOffset + " \t x2: " + x2);
+      println ("counter: " + counter + " \t x1: " + x1 + " \t xOffset: " + xOffset + " \t x2: " + x2);
      
      // cascades down linearly  
-     // dest.copy(source, x1 + xOffset, 0, barSize, 800, x2, (10 * i) + barSize, barSize, 800);
+     // dest.copy(source, x1 + xOffset, 0, sliceWidth, sourceOne.height, x2, (10 * counter) + sliceWidth, sliceWidth, sourceOne.height);
      
-     dest.copy(sourceA, x1 + xOffset, 0, barSize, 800, x2, barSize, barSize, 800);
+     // wide glimmer
+     dest.copy(sourceOne, x1 + xOffset, 0, sliceWidth, sourceOne.height, x2, sliceWidth, sliceWidth, sourceOne.height);
+
+      // tight glimmer     
+     dest.copy(sourceOne, xOffset, 0, sliceWidth, sourceOne.height, x2, sliceWidth, sliceWidth, sourceOne.height);
      
     }
     
-  image(dest, 0, 0, 1000, 800);
+  image(dest, 0, 0, sourceOne.width, sourceOne.height);
 }
 
 
