@@ -10,7 +10,7 @@ int numOfSlices = canvasWidth / sliceWidth;
     
 void setup() {
   
-    sourceOne = loadImage("mine_williamsburg_lampost_highway_dusk_dawn_sky_meloncholy_IMG_5077-cropped.jpg");
+    sourceOne = loadImage("data/mine_williamsburg_lampost_highway_dusk_dawn_sky_meloncholy_IMG_5077-cropped.jpg");
     sourceOne.resize(canvasWidth, canvasHeight);
     
     size(canvasWidth, canvasHeight);
