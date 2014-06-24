@@ -18,9 +18,7 @@
 	<%= stylesheet_link_tag "app" %>
 	<%= yield_content :styles %>
 
-	<%= javascript_include_tag  "app" %>
-
-	<canvas data-processing-sources="processing-pde/rollage-study-1/rollage-study-1.pde"></canvas>
+	<%= javascript_include_tag  "app", "sketch" %>
 
 	<%= yield_content :js %>
 </head>
