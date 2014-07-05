@@ -1,11 +1,11 @@
-sprockets.append_path File.join "#{root}", "components"
+sprockets.append_path File.join "#{root}", "source/components"
 
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :img, 'images'
 
 compass_config do |config|
-	config.add_import_path "./components"
+	config.add_import_path "./source/components"
 end
 
 after_configuration do
@@ -14,8 +14,8 @@ after_configuration do
 end
 
 configure :build do
-	activate :minify_css
-	activate :minify_javascript
+	# activate :minify_css
+	# activate :minify_javascript
 	activate :relative_assets
 end
 

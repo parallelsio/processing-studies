@@ -3,6 +3,6 @@ Gemfile.lock
 /.bundle
 /.sass-cache
 /build
-/components
+/source/components
 .DS_Store
 build-tmp
