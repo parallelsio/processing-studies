@@ -51,7 +51,7 @@ function draw() {
   }
 
 
-  image(dest, 0, 0, sourceOne.width, sourceOne.height);
+  image(dest, 0, 0, sourceOne.width, sourceOne.height).id("wow");
 
 
 }
