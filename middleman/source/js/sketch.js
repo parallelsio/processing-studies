@@ -12,7 +12,7 @@ var numOfSlices = canvasWidth / sliceWidth;
 
 function setup() {
 
-    createCanvas(canvasWidth, canvasHeight);
+    createCanvas(canvasWidth, canvasHeight).id("box1");
 
     sourceOne = loadImage("img/mine_williamsburg_lampost_highway_dusk_dawn_sky_meloncholy_IMG_5077-cropped.jpg");
     // imageMode(CENTER);
@@ -22,7 +22,7 @@ function setup() {
     dest = createImage(sourceOne.width, sourceOne.height, RGB);  
     
     // console.log ("h: " + sourceOne.height + " \t| w: " + sourceOne.width );
-    
+
 }
 
 function draw() {
@@ -51,7 +51,7 @@ function draw() {
   }
 
 
-  image(dest, 0, 0, sourceOne.width, sourceOne.height).id("wow");
+  image(dest, 0, 0, sourceOne.width, sourceOne.height);
 
 
 }
